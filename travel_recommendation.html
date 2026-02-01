@@ -45,27 +45,72 @@
         <p>
           Welcome to Our Company! We are a team of passionate individuals
           dedicated to providing excellent services/products to our customers.
-          Our mission is to <b>provide the best experience</b> for people traveling to
-          different destinations around the world.<br> Our values include integrity,
-          innovation, customer satisfaction, and teamwork. We believe in <b>putting
-          our customers first</b> and <b>working together</b> to achieve our goals.<br> Feel
-          free to explore our website to learn more about what we offer!
+          Our mission is to <b>provide the best experience</b> for people
+          traveling to different destinations around the world.<br />
+          Our values include integrity, innovation, customer satisfaction, and
+          teamwork. We believe in <b>putting our customers first</b> and
+          <b>working together</b> to achieve our goals.<br />
+          Feel free to explore our website to learn more about what we offer!
         </p>
         <div>
-            <h1>Our Team</h1>
-            
+          <h1>Our Team</h1>
+          <span class="team">
+            <figure><img src="./images/3.png" alt="icon" width="20" /></figure>
+            <p>
+              <strong>John Doe</strong><br />
+              John is reponsible for...<br />
+              <span>CEO></span>
+            </p>
+          </span>
+          <span class="team">
+            <figure><img src="./images/3.png" alt="icon" width="20" /></figure>
+            <p>
+              <strong>Celina Thomas</strong><br />
+              Celina Thomas is reponsible for...<br />
+              <span>Team Lead</span>
+            </p>
+          </span>
+          <span class="team">
+            <figure><img src="./images/3.png" alt="icon" width="20" /></figure>
+            <p>
+              <strong>Mike Tyson</strong><br />
+              Mike Tyson is reponsible for...<br />
+              <span>Delivery Head</span>
+            </p>
+          </span>
         </div>
       </section>
 
       <section id="ContactUs">
-        <h1>Explore Dream destination</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium
-          unde maxime consequatur fuga ipsa repellendus nemo dicta, at
-          perferendis ad suscipit ab laboriosam tempora quo ut est, nostrum
-          tenetur. Magnam?
-        </p>
-        <button type="button">Book Now</button>
+        <h1>Contact Us</h1>
+        <h5>Get in touch</h5>
+        <form action="/contact" method="POST">
+          <label for="name">Name</label><br />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          /><br />
+          <label for="email">Email</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          /><br />
+          <label for="message" name="name">Message</label><br />
+          <textarea
+            name="message"
+            id="message"
+            placeholder="Enter your message"
+            required
+          ></textarea
+          ><br />
+          <button type="submit">Submit</button>
+        </form>
       </section>
     </main>
   </body>
