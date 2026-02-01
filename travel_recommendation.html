@@ -26,10 +26,18 @@
         </div>
         <div id="searchBar">
           <form id="searchForm">
-            <img src="./images/2.png" alt="searchIcon" width="20" />
-            <input type="text" placeholder="Enter a destination or keyword" />
-            <button type="submit" id="search">Search</button>
-            <button type="reset" id="reset">Clear</button>
+            <img src="./images/2.png" alt="" width="20" aria-hidden="true" />
+            <label for="searchInput" class="sr-only">Search</label>
+            <input
+              type="text"
+              id="searchInput"
+              name="search"
+              placeholder="Enter a destination or keyword"
+            />
+            <button type="submit" id="search" title="Search destinations">
+              Search
+            </button>
+            <button type="reset" id="reset" title="Clear search">Clear</button>
           </form>
         </div>
       </nav>
@@ -42,7 +50,14 @@
           cultures and landscapes, while pursuing the desired destination that
           captivates the heart and ignites a sense of wonder.
         </p>
-        <button type="button" id="bookNow">Book Now</button>
+        <button
+          type="button"
+          id="bookNow"
+          title="Book your dream destination"
+          aria-label="Book your dream destination"
+        >
+          Book Now
+        </button>
       </section>
 
       <section id="AboutUs">
@@ -57,14 +72,14 @@
           <b>working together</b> to achieve our goals.<br />
           Feel free to explore our website to learn more about what we offer!
         </p>
-        <div>
+        <section id="teamMembers" aria-label="Team Members">
           <h2>Our Team</h2>
           <article class="team">
             <figure>
               <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
             </figure>
+            <h3>John Doe</h3>
             <p>
-              <strong>John Doe</strong><br />
               John is responsible for...<br />
               <span>CEO</span>
             </p>
@@ -73,8 +88,8 @@
             <figure>
               <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
             </figure>
+            <h3>Celina Thomas</h3>
             <p>
-              <strong>Celina Thomas</strong><br />
               Celina Thomas is responsible for...<br />
               <span>Team Lead</span>
             </p>
@@ -83,18 +98,18 @@
             <figure>
               <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
             </figure>
+            <h3>Mike Tyson</h3>
             <p>
-              <strong>Mike Tyson</strong><br />
               Mike Tyson is responsible for...<br />
               <span>Delivery Head</span>
             </p>
           </article>
-        </div>
+        </section>
       </section>
 
       <section id="ContactUs">
         <h1>Contact Us</h1>
-        <aside><h5>Get in touch</h5></aside>
+        <p>Get in touch</p>
         <form action="/contact" method="POST">
           <label for="name">Name</label><br />
           <input
@@ -128,60 +143,62 @@
       <p>&copy; 2026 Heorhii's Website. All rights reserved.</p>
     </footer>
     <div id="verticalLine">
-      <ul>
-        <li>
-          <a
-            href="https://x.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Twitter"
-            ><img
-              src="./images/twitter.webp"
-              width="30"
-              alt="twitter"
-              loading="lazy"
-          /></a>
-        </li>
-        <li>
-          <a
-            href="https://www.facebook.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Facebook"
-            ><img
-              src="./images/facebook.png"
-              width="30"
-              alt="facebook"
-              loading="lazy"
-          /></a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Instagram"
-            ><img
-              src="./images/insta.png"
-              width="30"
-              alt="instagram"
-              loading="lazy"
-          /></a>
-        </li>
-        <li>
-          <a
-            href="https://www.youtube.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="Youtube"
-            ><img
-              src="./images/youtube.webp"
-              width="30"
-              alt="youtube"
-              loading="lazy"
-          /></a>
-        </li>
-      </ul>
+      <nav aria-label="Social Media">
+        <ul>
+          <li>
+            <a
+              href="https://x.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Twitter"
+              ><img
+                src="./images/twitter.webp"
+                width="30"
+                alt="twitter"
+                loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.facebook.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Facebook"
+              ><img
+                src="./images/facebook.png"
+                width="30"
+                alt="facebook"
+                loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Instagram"
+              ><img
+                src="./images/insta.png"
+                width="30"
+                alt="instagram"
+                loading="lazy"
+            /></a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Youtube"
+              ><img
+                src="./images/youtube.webp"
+                width="30"
+                alt="youtube"
+                loading="lazy"
+            /></a>
+          </li>
+        </ul>
+      </nav>
     </div>
     <script src="./travel_recommendation.js"></script>
   </body>
