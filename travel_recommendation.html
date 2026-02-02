@@ -46,102 +46,80 @@
       </nav>
     </header>
     <main>
-      <section id="Home">
-        <h1>Explore Dream destination</h1>
-        <p>
-          It encourages exploration of unfamiliar territories, embracing diverse
-          cultures and landscapes, while pursuing the desired destination that
-          captivates the heart and ignites a sense of wonder.
-        </p>
-        <button
-          type="button"
-          id="bookNow"
-          title="Book your dream destination"
-          aria-label="Book your dream destination"
-        >
-          Book Now
-        </button>
+      <section id="Home" class="hero-section">
+          <h1>EXPLORE <br> DREAM <br> DESTINATION</h1>
+          <p>
+              It encourages exploration of unfamiliar territories, embracing diverse
+              cultures and landscapes, while pursuing the desired destination that
+              captivates the heart and ignites a sense of wonder.
+          </p>
+          <button type="button" id="bookNow" class="btn-primary">BOOK NOW</button>
       </section>
+  
+      <section id="AboutUs" class="content-section">
+          <div class="glass-box">
+              <h1>ABOUT US</h1>
+              <p>
+                  Welcome to Our Company! We are a team of passionate individuals
+                  dedicated to providing excellent services/products to our customers.
+                  Our mission is to <b>provide the best experience</b> for people
+                  traveling to different destinations around the world.<br /><br />
+                  Our values include integrity, innovation, customer satisfaction, and
+                  teamwork. We believe in <b>putting our customers first</b> and
+                  <b>working together</b> to achieve our goals.<br /><br />
+                  Feel free to explore our website to learn more about what we offer!
+              </p>
+          </div>
+  
+          <div class="team-container glass-box">
+              <h2>Our Team</h2>
+              <div class="team-grid">
+                  <article class="team-card">
+                      <div class="icon-circle"><img src="./images/3.png" alt="icon" /></div>
+                      <h3>John Doe</h3>
+                      <p>John is responsible for...</p>
+                      <span class="role-tag">CEO</span>
+                  </article>
+                  <article class="team-card">
+                      <div class="icon-circle"><img src="./images/3.png" alt="icon" /></div>
+                      <h3>Celina Thomas</h3>
+                      <p>Celina Thomas is responsible for...</p>
+                      <span class="role-tag">Team Lead</span>
+                  </article>
+                  <article class="team-card">
+                      <div class="icon-circle"><img src="./images/3.png" alt="icon" /></div>
+                      <h3>Mike Tyson</h3>
+                      <p>Mike Tyson is responsible for...</p>
+                      <span class="role-tag">Delivery Head</span>
+                  </article>
+              </div>
+          </div>
+      </section>
+  
+      <section id="ContactUs" class="content-section contact-layout">
+          <div class="contact-text">
+              <h1>CONTACT US</h1>
+              <p>Get in touch</p>
+          </div>
+          
+          <form action="/contact" method="POST" class="contact-form glass-box">
+              <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Enter your name" required />
+              </div>
+              <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Enter your email" required />
+              </div>
+              <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea name="message" id="message" placeholder="Enter your message" required></textarea>
+              </div>
+              <button type="submit" class="btn-submit">Submit</button>
+          </form>
+      </section>
+  </main>
 
-      <section id="AboutUs">
-        <h1>About Us</h1>
-        <p>
-          Welcome to Our Company! We are a team of passionate individuals
-          dedicated to providing excellent services/products to our customers.
-          Our mission is to <b>provide the best experience</b> for people
-          traveling to different destinations around the world.<br />
-          Our values include integrity, innovation, customer satisfaction, and
-          teamwork. We believe in <b>putting our customers first</b> and
-          <b>working together</b> to achieve our goals.<br />
-          Feel free to explore our website to learn more about what we offer!
-        </p>
-        <section id="teamMembers" aria-label="Team Members">
-          <h2>Our Team</h2>
-          <article class="team">
-            <figure>
-              <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
-            </figure>
-            <h3>John Doe</h3>
-            <p>
-              John is responsible for...<br />
-              <span>CEO</span>
-            </p>
-          </article>
-          <article class="team">
-            <figure>
-              <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
-            </figure>
-            <h3>Celina Thomas</h3>
-            <p>
-              Celina Thomas is responsible for...<br />
-              <span>Team Lead</span>
-            </p>
-          </article>
-          <article class="team">
-            <figure>
-              <img src="./images/3.png" alt="icon" width="20" loading="lazy" />
-            </figure>
-            <h3>Mike Tyson</h3>
-            <p>
-              Mike Tyson is responsible for...<br />
-              <span>Delivery Head</span>
-            </p>
-          </article>
-        </section>
-      </section>
-
-      <section id="ContactUs">
-        <h1>Contact Us</h1>
-        <p>Get in touch</p>
-        <form action="/contact" method="POST">
-          <label for="name">Name</label><br />
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          /><br />
-          <label for="email">Email</label><br />
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          /><br />
-          <label for="message">Message</label><br />
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Enter your message"
-            required
-          ></textarea
-          ><br />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    </main>
     <footer>
       <p>&copy; 2026 Heorhii's Website. All rights reserved.</p>
     </footer>
