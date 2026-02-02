@@ -1,17 +1,20 @@
+:root {
+    --side-rail-width: 60px; /* keep vertical line width */
+    --side-rail-gap: 40px;   /* smaller, fixed gap */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
 header {
     position: fixed;
     width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 header a {
@@ -20,27 +23,39 @@ header a {
     gap: 10px;
 }
 
-header > nav {
+header nav {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 100px;
     background: linear-gradient(to right, #001800, #94bb94);
     opacity: 0.9;
     height: 70px;
+    padding: 0 20px;
 }
 
 header > nav > div {
     align-items: center;
     display: flex;
+    white-space: nowrap;
+    justify-content: space-between;
 }
 
 div > ul {
     display: flex;
     list-style: none;
     gap: 25px;
+    white-space: nowrap;
+    flex-wrap: nowrap;
 }
 
 main {
     padding-top: 100px;
+}
+
+main,
+footer {
+    margin-left: calc(var(--side-rail-width) + var(--side-rail-gap));
 }
 
 a {
@@ -54,6 +69,7 @@ a > span {
     font-size: 30px;
     font-family: 'Courier New', Courier, monospace;
     font-style: italic;
+    white-space: nowrap;
 }
 
 a img {
@@ -74,7 +90,192 @@ a img {
 }
 
 input {
-    width: 200px;
-    height: 100px;
+    width: 300px;
+    height: 50px;
     border-radius: 100px;
+}
+
+button {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 100px;
+    padding: 5px 15px;
+    width: 70px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Search form styling - buttons inside input */
+#searchForm {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+#searchInput {
+    width: 400px;
+    height: 50px;
+    border-radius: 100px;
+    padding: 0 160px 0 50px; /* Left padding for icon, right padding for buttons */
+    border: 1px solid #ccc;
+    font-size: 13px;
+}
+
+#searchInput::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#searchInput:focus::placeholder {
+    opacity: 1;
+}
+
+#searchForm img {
+    position: absolute;
+    left: 15px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#searchForm #search,
+#searchForm #reset {
+    position: absolute;
+    right: 5px;
+    height: 30px;
+    padding: 0px;
+    font-size: 13px;
+    z-index: 2;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+#searchForm #search {
+    right: 80px; /* Position search button to the left of clear button */
+}
+
+#searchForm #reset {
+    right: 5px;
+}
+
+/* Prevent navigation links from wrapping */
+header nav ul li {
+    white-space: nowrap;
+}
+
+header nav ul li a {
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #ffd700; /* Gold/yellow color on hover - change this to your preferred color */
+}
+
+/* Prevent nav container from wrapping */
+header > nav {
+    flex-wrap: nowrap;
+}
+
+.page {
+    max-width: 1920px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Limit nav width on screens larger than 1920px to prevent gaps from growing */
+@media (min-width: 1921px) { 
+    header > nav {
+        max-width: 1920px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-height: 700px) {
+    #verticalLine {
+        overflow-y: auto;
+    }
+}
+
+/* Chrome, Safari, new Edge */
+#verticalLine::-webkit-scrollbar {
+    display: none;
+}
+
+/* Vertical line with social media icons on the left side */
+#verticalLine {
+    position: fixed;
+    top: 70px;              /* below header */
+    left: max(0px, calc((100vw - 1920px) / 2));
+    height: calc(100vh - 70px); /* viewport minus header */
+    width: var(--side-rail-width);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow-y: auto;   /* ✅ enable scroll */
+    overflow-x: hidden; /* prevent sideways scroll */
+
+    z-index: 100;
+    padding-top: 30px;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE / old Edge */
+    -ms-overflow-style: none;
+}
+
+
+#verticalLine nav {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Vertical line above icons */
+#verticalLine nav .vertical-line {
+    width: 7px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: #94bb94;
+    margin-bottom: 20px;
+}
+
+#verticalLine ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+}
+
+#verticalLine li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#verticalLine a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+#verticalLine img {
+    width: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+#verticalLine a:hover {
+    transform: scale(1.2);
 }
