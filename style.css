@@ -1,5 +1,11 @@
 /* CSS reset + variables */
-:root {}
+:root {
+    --color-primary: #008080;
+    --color-accent: #ffd700;
+    --color-dark: rgba(0, 0, 0, .45);
+    --radius-pill: 100px;
+    --nav-height: 4.5rem;
+}
 
 *,
 *::before,
@@ -10,7 +16,7 @@
 html {
     font-size: 100%;
     /* respect user settings */
-    scroll-padding-top: 4.5rem;
+    scroll-padding-top: var(--nav-height);
     scroll-behavior: smooth;
     /* Optional: makes the jump look nice and fluid */
 }
@@ -39,20 +45,10 @@ button {
 
 /* Page container */
 .page {
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
     padding-inline: 2rem;
     width: 100%;
-    display: grid;
-    grid-template-columns: 0 1fr;
-    grid-template-rows: 0 1fr auto;
-    grid-template-areas:
-        ".     ."
-        /* Space reserved for fixed nav */
-        ".     main"
-        /* Space reserved for fixed aside | Main content */
-        ".     footer";
-    /* Space reserved for fixed aside | Footer content */
 }
 
 /* Header, navigation bar */
@@ -71,11 +67,11 @@ nav {
     align-items: center;
     gap: clamp(1.5rem, 5vw, 5rem);
     opacity: 0.95;
-    height: 4.5rem;
+    height: var(--nav-height);
     position: relative;
     padding-right: clamp(1rem, 2vw, 3rem);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    background: linear-gradient(to right, #445607, #008080);
+    background: linear-gradient(to right, #445607, var(--color-primary));
     z-index: 100;
 }
 
@@ -109,7 +105,7 @@ li a {
 }
 
 li a:focus {
-    color: #ffd700;
+    color: var(--color-accent);
     transform: scale(1.1);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -117,57 +113,32 @@ li a:focus {
 #name:focus,
 #email:focus,
 #message:focus {
-    outline: 2px solid #ffd700;
+    outline: 2px solid var(--color-accent);
     /* Solid yellow outline */
     outline-offset: 2px;
     /* Creates a small gap between the field and the outline */
     box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
     /* Optional: yellow glow effect */
-    border-color: #ffd700;
+    border-color: var(--color-accent);
     /* Changes the border color to match */
     font-size: 1rem;
 }
 
-/* Update 1: Navigation links and Search/Reset/Book buttons */
 li a:hover,
 li a:focus,
-/* Added focus */
-#bookNow:hover,
-#bookNow:focus,
-/* Added focus */
-#search:hover,
-#search:focus,
-/* Added focus */
-#reset:hover,
-#reset:focus,
-.btn-submit:hover,
-.btn-submit:focus {
-    /* Added focus */
-    color: #ffd700;
+.btn:hover,
+.btn:focus {
+    color: var(--color-accent);
     transform: scale(1.1);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     background: black;
     outline: none;
     transition: 0.3s all ease;
-    /* Removes default browser ring to use your custom scale/color effect */
 }
 
 aside li a:hover,
 aside li a:focus {
     background: none;
-}
-
-/* Update 2: The white glow effect for the buttons */
-#search:hover,
-#search:focus,
-/* Added focus */
-#reset:hover,
-#reset:focus,
-/* Added focus */
-#bookNow:hover,
-#bookNow:focus {
-    /* Added focus */
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
 }
 
 /* Headings */
@@ -213,7 +184,7 @@ div>a>img {
 input {
     width: 28rem;
     height: 2.5rem;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
 }
 
 /* Search form styling - buttons inside input */
@@ -237,7 +208,7 @@ input {
 
 #searchInput {
     height: 3rem;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid #ccc;
     padding: 0 12rem 0 3rem;
     font-size: 0.9rem;
@@ -307,9 +278,9 @@ input {
 
 /* Buttons */
 .btn {
-    background-color: #008080;
+    background-color: var(--color-primary);
     font-weight: 700;
-    border-radius: 100px;
+    border-radius: var(--radius-pill);
     border: 1px solid #fff;
     width: 5rem;
     cursor: pointer;
@@ -324,7 +295,7 @@ aside {
     align-items: center;
     position: fixed;
     left: 2rem;
-    top: 4.5rem;
+    top: var(--nav-height);
 }
 
 #vertical-line {
@@ -361,8 +332,7 @@ aside a:focus {
 
 /* General Main Layout */
 main {
-    padding-top: 4.5rem;
-    grid-area: main;
+    padding-top: var(--nav-height);
 }
 
 .content-section {
@@ -371,13 +341,17 @@ main {
     flex-direction: column;
 }
 
+#contactus.content-section {
+    align-items: center;
+}
+
 hr {
     border-radius: 50%;
     height: 4px;
     /* thickness */
     width: 100%;
     /* line width */
-    background: linear-gradient(to right, #445607, #008080);
+    background: linear-gradient(to right, #445607, var(--color-primary));
     /* line color */
     margin-block: 2rem;
     /* spacing */
@@ -387,7 +361,11 @@ hr {
     width: 40%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+}
+
+#bookNow {
+    align-self: center;
 }
 
 p {
@@ -395,7 +373,7 @@ p {
 }
 
 .box {
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--color-dark);
     /* Transparent dark overlay */
     padding: 0.5rem;
     border-radius: 20px;
@@ -474,7 +452,7 @@ p {
 }
 
 form.box {
-    background: rgba(0, 0, 0, 0.45);
+    background: var(--color-dark);
     /* Transparent dark overlay */
     border-radius: 30px;
     display: flex;
@@ -529,19 +507,15 @@ textarea {
 
 .btn-submit {
     width: 5rem;
-    background-color: #008080;
+    background-color: var(--color-primary);
     margin-top: 1.5rem;
     height: 2rem;
     text-align: center;
 }
 
 footer {
-    grid-area: footer;
-    /* optional, limits footer width */
-    margin: 0 auto;
-    /* centers footer horizontally */
-    text-align: center;
-    /* centers text inside footer */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px 0;
-    /* optional spacing */
 }
