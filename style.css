@@ -556,11 +556,11 @@ main {
 
 .contact-text h1 {
     /* Use a heavy sans-serif font */
-    font-family: 'Arial Black', Gadget, sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 100px;       /* Significant size increase */
-    font-weight: 100;       /* Maximum boldness */
+    font-weight: 900;       /* Maximum boldness */
     line-height: 1.8;       /* Tighten line spacing like the image */
-    letter-spacing: 0px;   /* Pull letters closer for that heavy feel */
+    letter-spacing: 2px;   /* Pull letters closer for that heavy feel */
     text-transform: uppercase;
     color: white;
     margin: 0;
@@ -570,5 +570,6 @@ main {
 .contact-text p {
     font-size: 28px;
     margin-top: 0px;
-    opacity: 0.9;           /* Slightly softer than the heading */
+    opacity: 0.9;      
+    margin-left: 5px;     /* Slightly softer than the heading */
 }
