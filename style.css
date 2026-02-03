@@ -93,7 +93,8 @@ li a {
     font-weight: 700;
 }
 
-li a:hover {
+li a:hover,
+li a:focus {
     color: #ffd700;
     transform: scale(1.1);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -129,6 +130,104 @@ a>span {
 /* Images */
 div>a>img {
     width: 3rem;
+}
+
+/* Inputs */
+input {
+    width: 28rem;
+    height: 2.5rem;
+    border-radius: 3rem;
+}
+
+/* Search form styling - buttons inside input */
+#searchForm {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 28rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+#searchInput {
+    height: 3rem;
+    border-radius: 3rem;
+    border: 1px solid #ccc;
+    padding: 0 12rem 0 3rem;
+}
+
+#searchInput:focus {
+    outline: none;
+    border: 2px solid #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+#searchInput::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+#searchInput:focus::placeholder {
+    opacity: 1;
+}
+
+#searchForm img {
+    position: absolute;
+    left: 1rem;
+}
+
+/* Search buttons */
+#search,
+#reset {
+    position: absolute;
+    height: 2.2rem;
+}
+
+#search:hover,
+#reset:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+#search {
+    right: 6rem;
+}
+
+#reset {
+    right: 0.5rem;
+}
+
+/* Buttons */
+.btn {
+    background-color: #008080;
+    font-weight: 500;
+    border-radius: 3rem;
+    border: 1px solid #fff;
+    width: 5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+/* Hover effect for Book Now and Contact Submit buttons */
+.btn:hover,
+.btn-submit:hover {
+    background-color: #000000 !important;
+    /* Forces background to black */
+    color: #ffffff;
+    /* Ensures text stays white */
+    transition: background-color 0.3s ease;
+    /* Smooth color transition */
+    cursor: pointer;
 }
 
 main {
@@ -170,118 +269,6 @@ footer {
     /* optional spacing */
 }
 
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-}
-
-input {
-    width: 450px;
-    height: 50px;
-    border-radius: 100px;
-}
-
-button {
-    font-size: 15px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    background-color: #008080;
-    border: none;
-    border-radius: 100px;
-    padding: 5px 15px;
-    width: 70px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-align: center;
-}
-
-/* Search form styling - buttons inside input */
-#searchForm {
-    position: relative;
-    display: flex;
-    /* use flex instead of inline-flex */
-    align-items: center;
-    max-width: 100%;
-    /* prevent overflow */
-    flex-grow: 1;
-    /* allow input to grow/shrink */
-}
-
-#searchInput {
-    flex: 1;
-    /* input fills available space */
-    min-width: 200px;
-    /* won’t shrink too much */
-    max-width: 600px;
-    /* maximum size you want */
-    height: 50px;
-    padding: 0 170px 0 50px;
-    /* space for buttons on right */
-    border-radius: 100px;
-    font-size: 15px;
-    /* slightly bigger text */
-    border: 1px solid #ccc;
-}
-
-#searchInput::placeholder {
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-#searchInput:focus::placeholder {
-    opacity: 1;
-}
-
-#searchInput:focus {
-    outline: none;
-    border: 2px solid #ffd700;
-    /* gold border on focus */
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-}
-
-#searchForm #search:hover,
-#searchForm #reset:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
-}
-
-#searchForm img {
-    position: absolute;
-    left: 15px;
-    z-index: 1;
-    pointer-events: none;
-}
-
-#searchForm #search,
-#searchForm #reset {
-    position: absolute;
-    right: 5px;
-    /* adjust for spacing */
-    height: 30px;
-    padding: 0 15px;
-}
-
-#searchForm #search {
-    position: absolute;
-    right: 80px;
-    /* left of clear button */
-    height: 35px;
-    padding: 0;
-}
-
-#searchForm #reset {
-    position: absolute;
-    right: 5px;
-    height: 35px;
-    padding: 0;
-}
-
 /* Limit nav width on screens larger than 1920px to prevent gaps from growing */
 @media (min-width: 1921px) {
     header>nav {
@@ -314,18 +301,6 @@ button {
         /* smaller gap between icons */
     }
 }
-
-/* Hover effect for Search and Clear buttons */
-#searchForm #search:hover {
-    background-color: #000000;
-    /* darker green on hover */
-}
-
-#searchForm #reset:hover {
-    background-color: #000000;
-    /* dark red on hover */
-}
-
 
 /* Chrome, Safari, new Edge */
 #verticalLine::-webkit-scrollbar {
@@ -444,28 +419,6 @@ main {
 
 .glass-box p {
     text-align: justify;
-}
-
-.btn-primary {
-    background-color: #008080;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 20px;
-    font-weight: bold;
-    width: auto;
-    border: none;
-}
-
-/* Hover effect for Book Now and Contact Submit buttons */
-.btn-primary:hover,
-.btn-submit:hover {
-    background-color: #000000 !important;
-    /* Forces background to black */
-    color: #ffffff;
-    /* Ensures text stays white */
-    transition: background-color 0.3s ease;
-    /* Smooth color transition */
-    cursor: pointer;
 }
 
 /* About Us & Team Styles */
