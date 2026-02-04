@@ -113,21 +113,16 @@ li a:focus {
 #name:focus,
 #email:focus,
 #message:focus {
-    outline: 2px solid var(--color-accent);
-    /* Solid yellow outline */
-    outline-offset: 2px;
-    /* Creates a small gap between the field and the outline */
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-    /* Optional: yellow glow effect */
-    border-color: var(--color-accent);
-    /* Changes the border color to match */
-    font-size: 1rem;
+    outline: none;
+    /* remove default outline */
+    border-color: #ffd700;
+    /* optional: subtle border change */
+    box-shadow: 0 0 8px 2px rgba(255, 215, 0, 0.7);
+    /* yellow glow */
 }
 
 li a:hover,
-li a:focus,
-.btn:hover,
-.btn:focus {
+.btn:hover {
     color: var(--color-accent);
     transform: scale(1.1);
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -335,10 +330,60 @@ main {
     padding-top: var(--nav-height);
 }
 
+.main-text {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
 .content-section {
     margin-block: 2rem;
     display: flex;
     flex-direction: column;
+}
+
+#home.content-section {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#searchResultsContainer {
+    width: 40%;
+    margin-right: 9rem;
+}
+
+#searchResultsContainer p {
+    text-justify: auto;
+    color: black;
+    padding-inline: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+#searchResultsContainer span {
+    color: black;
+    padding-inline: 1.5rem;
+    padding-top: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: bolder;
+}
+
+.searchResults {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+.searchImages {
+    display: block;
+    width: 100%;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #contactus.content-section {
@@ -355,13 +400,6 @@ hr {
     /* line color */
     margin-block: 2rem;
     /* spacing */
-}
-
-.main-text {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
 }
 
 #bookNow {
@@ -477,6 +515,10 @@ textarea {
     padding: 1rem;
     font-size: 1rem;
     font-family: Arial, Helvetica, sans-serif;
+    border: 1px solid #ccc;
+    /* keep a subtle default border */
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .form-group {
