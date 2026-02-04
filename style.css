@@ -369,6 +369,10 @@ main {
     font-weight: bolder;
 }
 
+span>b {
+    color: red;
+}
+
 .searchResults {
     border-radius: 20px;
     display: flex;

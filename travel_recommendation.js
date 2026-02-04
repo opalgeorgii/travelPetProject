@@ -67,8 +67,18 @@ function createElements(type) {
   img.src = type.imageUrl;
   img.alt = type.name || "Travel Image";
 
+  const now = new Date();
+
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: type.timeZone,
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric"
+  });
+
   const span = document.createElement('span');
-  span.textContent = type.name || "";
+  span.innerHTML = `${type.name || ""} <b>${formatter.format(now)}</b>`;
 
   const p = document.createElement('p');
   p.textContent = type.description || "";
